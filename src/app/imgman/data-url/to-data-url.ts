@@ -1,5 +1,8 @@
 import { MimeType } from '../mimetype';
 
-export function toDataUrl(base64: string, mimeType: MimeType) {
-  return `data:${mimeType};base64,${base64}`;
+export function toDataUrl(element: string | HTMLCanvasElement, mimeType: MimeType) {
+  if (element instanceof HTMLCanvasElement) {
+    return element.toDataURL(mimeType);
+  }
+  return `data:${mimeType};base64,${element}`;
 }
