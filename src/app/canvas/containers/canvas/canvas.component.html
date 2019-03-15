@@ -1,0 +1,9 @@
+
+
+<canvas #canvas></canvas>
+
+<aside class="tools">
+  <div *ngIf="canvasReady">
+    <app-color-picker [canvas]="canvas"></app-color-picker>
+  </div>
+</aside>

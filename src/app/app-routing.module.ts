@@ -3,9 +3,13 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
+    path: '',
+    loadChildren: './canvas/canvas.module#CanvasModule'
+  },
+  {
     path: 'examples',
     loadChildren: './examples/examples.module#ExamplesModule'
-  },
+  }
 ];
 
 @NgModule({

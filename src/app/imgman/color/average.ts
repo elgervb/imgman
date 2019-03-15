@@ -4,13 +4,15 @@ import { Rgb } from './rgb';
 
 const ROW_PADDING = 4;
 
-export function average(image: HTMLImageElement, blockSize = 5): Rgb | null {
+export function average(image: HTMLImageElement | HTMLCanvasElement, blockSize = 5): Rgb | null {
 
-  const canvas = createCanvasFromImage(image);
+  let canvas: HTMLCanvasElement;
+
+  canvas = image instanceof HTMLImageElement ? createCanvasFromImage(image) : image;
   const context = canvas.getContext('2d');
 
   let data: ImageData;
-  const rgb: Rgb = { r: 0, g: 0, b: 0 };
+  const rgb: Rgb = { r: 0, g: 0, b: 0, a: 1 };
 
   try {
     data = context.getImageData(0, 0, canvas.width, canvas.height);
@@ -37,6 +39,7 @@ export function average(image: HTMLImageElement, blockSize = 5): Rgb | null {
   rgb.r = ~~(rgb.r / count);
   rgb.g = ~~(rgb.g / count);
   rgb.b = ~~(rgb.b / count);
+  rgb.a = 1;
 
   return rgb;
 }
