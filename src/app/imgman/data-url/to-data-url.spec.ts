@@ -1,5 +1,4 @@
 import { createCanvas } from '../create/canvas';
-import { createImage } from '../create/image';
 import { MimeType } from '../mimetype';
 
 import { toDataUrl } from './to-data-url';
