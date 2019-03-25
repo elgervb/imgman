@@ -15,4 +15,14 @@ describe('createCanvas', () => {
 
     expect(context).toBeTruthy();
   });
+
+  it('sets the height and width of the canvas', () => {
+    const height = 100;
+    const width = 200;
+    const canvas = createCanvas(height, width);
+
+    expect(canvas.width).toBe(width);
+    expect(canvas.height).toBe(height);
+  });
+
 });

@@ -1,9 +1,8 @@
-import { Component, Input, OnDestroy, OnInit } from '@angular/core';
-import { BehaviorSubject, fromEvent, Observable, Subject } from 'rxjs';
+import { Component, HostListener, Input, OnDestroy, OnInit } from '@angular/core';
+import { BehaviorSubject, fromEvent, merge, Observable, Subject } from 'rxjs';
 import { filter, map, startWith, takeUntil } from 'rxjs/operators';
 import { average } from 'src/app/imgman/color/average';
 import { colorPicker } from 'src/app/imgman/color/color-picker';
-import { Rgb } from 'src/app/imgman/color/rgb';
 import { rgbToString } from 'src/app/imgman/color/rgb-to-string';
 
 @Component({
@@ -13,31 +12,41 @@ import { rgbToString } from 'src/app/imgman/color/rgb-to-string';
 })
 export class ColorPickerComponent implements OnInit, OnDestroy {
 
+  constructor() { }
+
   @Input() canvas: HTMLCanvasElement;
+  @Input() secondaryCanvas: HTMLCanvasElement;
 
   color$: Observable<string>;
   active$ = new BehaviorSubject<boolean>(false);
 
   private destroyed$ = new Subject();
 
-  constructor() { }
+  @HostListener('document:keydown.escape')
+  cancelActive() {
+    this.toggleActive(false);
+  }
 
   ngOnInit() {
 
-    fromEvent(this.canvas, 'click')
-      .pipe(
-        filter(() => this.active$.value),
-        takeUntil(this.destroyed$)
-      ).subscribe(() => this.toggleActive());
+    merge(
+      fromEvent(this.canvas, 'click'),
+      fromEvent(this.secondaryCanvas, 'click')
+    ).pipe(
+      filter(() => this.active$.value),
+      takeUntil(this.destroyed$)
+    ).subscribe(() => this.toggleActive());
 
-    this.color$ = fromEvent(this.canvas, 'mousemove')
-      .pipe(
-        filter(() => this.active$.value),
-        map<MouseEvent, Rgb>(event => colorPicker(this.canvas, event.layerX, event.layerY)),
-        startWith(average(this.canvas)),
-        map(rgbToString),
-        takeUntil(this.destroyed$)
-      );
+    this.color$ = merge(
+      fromEvent<MouseEvent>(this.canvas, 'mousemove'),
+      fromEvent<MouseEvent>(this.secondaryCanvas, 'mousemove')
+    ).pipe(
+      filter(() => this.active$.value),
+      map(event => colorPicker(event.target as HTMLCanvasElement, event.layerX, event.layerY)),
+      startWith(average(this.canvas)),
+      map(rgbToString),
+      takeUntil(this.destroyed$)
+    );
   }
 
   ngOnDestroy() {
@@ -45,8 +54,8 @@ export class ColorPickerComponent implements OnInit, OnDestroy {
     this.destroyed$.complete();
   }
 
-  toggleActive() {
-    this.active$.next(!this.active$.getValue());
+  toggleActive(force?: boolean) {
+    this.active$.next(force ? force : !this.active$.getValue());
   }
 
 }

@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-canvas',
@@ -7,32 +7,20 @@ import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 })
 export class CanvasComponent implements OnInit {
 
-  @ViewChild('canvas') canvasEl: ElementRef<HTMLCanvasElement>;
-
-  canvasReady = false;
+  canvas: HTMLCanvasElement;
+  colorWheel: HTMLCanvasElement;
 
   constructor() { }
 
   ngOnInit() {
-
-    const canvas = this.canvasEl.nativeElement;
-
-    const img = new Image();
-    img.src = '/assets/ugly-dog.png';
-    img.onload = () => {
-      this.copyImageOnCanvas(canvas, img);
-      this.canvasReady = true;
-    };
+    //
   }
 
-  private copyImageOnCanvas(canvas: HTMLCanvasElement, img: HTMLImageElement) {
-    const context = canvas.getContext('2d');
-    canvas.height = img.naturalHeight || img.offsetHeight || img.height;
-    canvas.width = img.naturalWidth || img.offsetWidth || img.width;
-
-    context.drawImage(img, 0, 0, canvas.width, canvas.height, 0, 0, canvas.width, canvas.height);
-
-    return canvas;
+  canvasIsReady(canvas: HTMLCanvasElement) {
+    this.canvas = canvas;
   }
 
+  colorWheelReady(colorWheel: HTMLCanvasElement) {
+    this.colorWheel = colorWheel;
+  }
 }

@@ -4,8 +4,9 @@ import { createCanvas } from '../create/canvas';
 export function resize(canvas: HTMLCanvasElement, maxHeight: number, maxWidth: number, ratioBy: 'width' | 'height' = 'width'): HTMLCanvasElement {
 
   const ratio = canvas.height / canvas.width;
-  const width = ratioBy === 'width' ? maxWidth : maxWidth * ratio;
-  const height = ratioBy === 'height' ? maxHeight : maxHeight * ratio;
+  const shouldResizeByRatio = canvas.height > maxHeight || canvas.width > maxWidth;
+  const width = ratioBy === 'width' ? maxWidth : shouldResizeByRatio ? maxWidth / ratio : maxWidth;
+  const height = ratioBy === 'height' ? maxHeight : shouldResizeByRatio ? maxHeight * ratio : maxHeight;
 
   const copy = createCanvas();
   copy.height = height;

@@ -9,7 +9,6 @@
 
 .tools {
   position: absolute;
-  left: 0;
-  top: 50%;
-  transform: translateY(-50%);
+  left: 1rem;
+  top: 2rem;
 }
