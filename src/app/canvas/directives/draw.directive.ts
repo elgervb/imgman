@@ -18,6 +18,7 @@ export class DrawDirective implements OnInit, OnChanges, AfterContentInit {
    */
   @Input() globalAlpha: number;
   @Input() brushType: BrushType = BrushType.pen;
+  @Input() drawingEnabled = false;
 
   // fallback for nested canvasses...
   @ContentChild('canvas') contentCanvas: ElementRef<HTMLCanvasElement>;
@@ -41,6 +42,10 @@ export class DrawDirective implements OnInit, OnChanges, AfterContentInit {
       this.setBrush(this.brushType || BrushType.pen);
     }
 
+    if (changes.brushType && changes.brushType.currentValue) {
+      this.setBrush(changes.brushType.currentValue);
+    }
+
     if (this.brush && this.canvas) {
       this.brush.setContext(this.createContext());
     }
@@ -52,7 +57,6 @@ export class DrawDirective implements OnInit, OnChanges, AfterContentInit {
         this.canvas = this.contentCanvas.nativeElement;
       }
     }
-
   }
 
   clear() {
@@ -75,21 +79,26 @@ export class DrawDirective implements OnInit, OnChanges, AfterContentInit {
   private setUpCanvas() {
     this.ctx = this.canvas.getContext('2d');
 
+    // TODO: set these listeners up with RxJs fromEvent
     this.canvas.onmousedown = (evt: MouseEvent) => {
+      if (this.drawingEnabled) {
+        this.isDrawing = true;
 
-      this.isDrawing = true;
-
-      this.brush.down(getMousePosition(evt, this.canvas));
+        this.brush.down(getMousePosition(evt, this.canvas));
+      }
     };
 
     this.canvas.onmousemove = (evt: MouseEvent) => {
-      if (this.isDrawing) {
+      if (this.drawingEnabled && this.isDrawing) {
         this.brush.move(getMousePosition(evt, this.canvas));
       }
     };
+
     this.canvas.onmouseup = (evt: MouseEvent) => {
-      this.isDrawing = false;
-      this.brush.up(getMousePosition(evt, this.canvas));
+      if (this.drawingEnabled) {
+        this.isDrawing = false;
+        this.brush.up(getMousePosition(evt, this.canvas));
+      }
     };
   }
 }

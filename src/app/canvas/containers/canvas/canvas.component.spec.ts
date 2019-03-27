@@ -2,6 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { SharedModule } from 'src/app/shared/shared.module';
 
 import { CanvasImageComponent, ColorPickerComponent } from '../../components';
+import { DrawDirective } from '../../directives/draw.directive';
 
 import { CanvasComponent } from './canvas.component';
 
@@ -11,7 +12,12 @@ describe('CanvasComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [CanvasComponent, ColorPickerComponent, CanvasImageComponent],
+      declarations: [
+        CanvasComponent,
+        ColorPickerComponent,
+        CanvasImageComponent,
+        DrawDirective
+      ],
       imports: [SharedModule]
     })
       .compileComponents();
