@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Rgb } from 'src/app/imgman/color/rgb';
+import { rgbToString } from 'src/app/imgman/color/rgb-to-string';
 
 @Component({
   selector: 'app-canvas',
@@ -9,6 +11,7 @@ export class CanvasComponent implements OnInit {
 
   canvas: HTMLCanvasElement;
   colorWheel: HTMLCanvasElement;
+  color: string;
 
   constructor() { }
 
@@ -22,5 +25,9 @@ export class CanvasComponent implements OnInit {
 
   colorWheelReady(colorWheel: HTMLCanvasElement) {
     this.colorWheel = colorWheel;
+  }
+
+  setColor(color: Rgb) {
+    this.color = rgbToString(color);
   }
 }
