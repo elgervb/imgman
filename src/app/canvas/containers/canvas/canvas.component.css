@@ -7,8 +7,17 @@
   width: 100%;
 }
 
-.tools {
+app-toolbar {
   position: absolute;
+  text-shadow: #fff 0px 0px 0.8rem;
+  top: 1rem;
+  width: 10rem;
+}
+
+.colorpicker-toolbar {
   left: 1rem;
-  top: 2rem;
+}
+
+.drawing-toolbar {
+  left: 11.5rem;
 }

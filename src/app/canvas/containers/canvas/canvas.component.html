@@ -1,12 +1,26 @@
 
-<app-canvas-image appDraw [canvas]="canvas" [color]="color" image="/assets/ugly-dog.png" (ready)="canvasIsReady($event)"></app-canvas-image>
+<app-canvas-image
+  image="/assets/ugly-dog.png"
+  (ready)="canvasIsReady($event)"
+  appDraw
+  [canvas]="canvas"
+  [color]="color"
+  [lineWidth]="drawingSettings?.lineWidth"
+  [globalAlpha]="drawingSettings?.opacity"
+  [brushType]="drawingSettings?.brushType"
+  [drawingEnabled]="drawingSettings?.enabled">
+</app-canvas-image>
 
-<aside class="tools">
+<!-- TODO: creatae a color picker toolbar -->
+<app-toolbar class="colorpicker-toolbar" title="Color picker">
   <ng-container *ngIf="canvas && colorWheel">
     <app-color-picker [canvas]="canvas" [secondaryCanvas]="colorWheel" (picked)="setColor($event)"></app-color-picker>
   </ng-container>
-    <div>
-      <app-canvas-image image="/assets/color-wheel.png" max="100" (ready)="colorWheelReady($event)"></app-canvas-image>
-    </div>
+  <div>
+    <app-canvas-image image="/assets/color-wheel.png" max="100" (ready)="colorWheelReady($event)"></app-canvas-image>
+  </div>
+</app-toolbar>
 
-</aside>
+<app-toolbar class="drawing-toolbar" title="drawing">
+  <app-drawing-toolbar (changed)="setDrawingSettings($event)"></app-drawing-toolbar>
+</app-toolbar>
