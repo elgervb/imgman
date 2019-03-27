@@ -1,9 +1,9 @@
 
-<app-canvas-image image="/assets/ugly-dog.png" (ready)="canvasIsReady($event)"></app-canvas-image>
+<app-canvas-image appDraw [canvas]="canvas" [color]="color" image="/assets/ugly-dog.png" (ready)="canvasIsReady($event)"></app-canvas-image>
 
 <aside class="tools">
   <ng-container *ngIf="canvas && colorWheel">
-    <app-color-picker [canvas]="canvas" [secondaryCanvas]="colorWheel"></app-color-picker>
+    <app-color-picker [canvas]="canvas" [secondaryCanvas]="colorWheel" (picked)="setColor($event)"></app-color-picker>
   </ng-container>
     <div>
       <app-canvas-image image="/assets/color-wheel.png" max="100" (ready)="colorWheelReady($event)"></app-canvas-image>

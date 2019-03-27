@@ -1,8 +1,9 @@
-import { Component, HostListener, Input, OnDestroy, OnInit } from '@angular/core';
+import { Component, EventEmitter, HostListener, Input, OnDestroy, OnInit, Output } from '@angular/core';
 import { BehaviorSubject, fromEvent, merge, Observable, Subject } from 'rxjs';
-import { filter, map, startWith, takeUntil } from 'rxjs/operators';
+import { filter, map, startWith, takeUntil, tap } from 'rxjs/operators';
 import { average } from 'src/app/imgman/color/average';
 import { colorPicker } from 'src/app/imgman/color/color-picker';
+import { Rgb } from 'src/app/imgman/color/rgb';
 import { rgbToString } from 'src/app/imgman/color/rgb-to-string';
 
 @Component({
@@ -16,6 +17,8 @@ export class ColorPickerComponent implements OnInit, OnDestroy {
 
   @Input() canvas: HTMLCanvasElement;
   @Input() secondaryCanvas: HTMLCanvasElement;
+
+  @Output() readonly picked = new EventEmitter<Rgb>();
 
   color$: Observable<string>;
   active$ = new BehaviorSubject<boolean>(false);
@@ -44,6 +47,7 @@ export class ColorPickerComponent implements OnInit, OnDestroy {
       filter(() => this.active$.value),
       map(event => colorPicker(event.target as HTMLCanvasElement, event.layerX, event.layerY)),
       startWith(average(this.canvas)),
+      tap(color => this.picked.emit(color)),
       map(rgbToString),
       takeUntil(this.destroyed$)
     );
