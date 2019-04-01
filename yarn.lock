@@ -285,6 +285,11 @@
     lodash "^4.17.11"
     to-fast-properties "^2.0.0"
 
+"@elgervb/stencil-components@^0.0.3":
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/@elgervb/stencil-components/-/stencil-components-0.0.3.tgz#86c16d3f0676f3ffe22cafe50a2bf3b599ee3777"
+  integrity sha512-Cm0hSAGoePKkaObjFd1KXhe54dQe1VMzzZO24ct3kqIOnEFVr2bDTAKua4MPr8g6Tlklr2jHgReHbvrtTqtfOg==
+
 "@ngtools/webpack@7.3.4":
   version "7.3.4"
   resolved "https://registry.yarnpkg.com/@ngtools/webpack/-/webpack-7.3.4.tgz#069b3425ef928ecf91f34b0c4c04dde158534a85"

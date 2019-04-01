@@ -11,6 +11,8 @@ import { DrawingSettings } from '../../components/drawing-toolbar/drawing-toolba
 })
 export class CanvasComponent implements OnInit {
 
+  constructor() { }
+
   canvas: HTMLCanvasElement;
 
   // TODO: move this to a color picker toolbar
@@ -19,7 +21,7 @@ export class CanvasComponent implements OnInit {
 
   drawingSettings: DrawingSettings;
 
-  constructor() { }
+  progress: number;
 
   ngOnInit() {
     //
@@ -34,10 +36,22 @@ export class CanvasComponent implements OnInit {
   }
 
   setColor(color: Rgb) {
-    this.color = rgbToString(color);
+    setTimeout(() => this.color = rgbToString(color), 0);
   }
 
   setDrawingSettings(drawingSettings: DrawingSettings) {
     this.drawingSettings = drawingSettings;
+  }
+
+  stencilClick(event: UIEvent) {
+    console.log('Got a click from a StencilJS button', event);
+  }
+
+  stencilCompleted(event: Event) {
+    console.log('Got a completed event from a StencilJS progressbar', event);
+  }
+
+  setProgress(progress: number) {
+    this.progress = progress;
   }
 }

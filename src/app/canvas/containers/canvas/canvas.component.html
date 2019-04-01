@@ -11,7 +11,7 @@
   [drawingEnabled]="drawingSettings?.enabled">
 </app-canvas-image>
 
-<!-- TODO: creatae a color picker toolbar -->
+<!-- TODO: create a color picker toolbar -->
 <app-toolbar class="colorpicker-toolbar" title="Color picker">
   <ng-container *ngIf="canvas && colorWheel">
     <app-color-picker [canvas]="canvas" [secondaryCanvas]="colorWheel" (picked)="setColor($event)"></app-color-picker>
