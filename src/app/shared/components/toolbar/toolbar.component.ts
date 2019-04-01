@@ -9,7 +9,7 @@ export class ToolbarComponent implements OnInit {
 
   @Input() title: string;
 
-  show = true;
+  @Input() show = true;
 
   constructor() { }
 
