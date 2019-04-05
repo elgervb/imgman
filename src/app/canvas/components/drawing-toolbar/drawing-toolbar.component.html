@@ -1,47 +1,47 @@
 <form [formGroup]="form">
 
-  <div>
+  <evb-formcontrol>
     <label for="enabled">enable</label>
     <input type="checkbox" id="enabled" formControlName="enabled" />
-  </div>
+  </evb-formcontrol>
 
   <ng-container *ngIf="form.get('enabled').value">
 
     <hr>
 
-    <div>
+    <evb-formcontrol>
       <input type="radio" id="brushtype-pen" formControlName="brushType" [value]="brushType.pen" checked/>
       <label for="brushtype-pen">pen</label>
-    </div>
-    <div>
+    </evb-formcontrol>
+    <evb-formcontrol>
       <input type="radio" id="brushtype-marker" formControlName="brushType" [value]="brushType.marker"/>
       <label for="brushtype-marker">marker</label>
-    </div>
-    <div>
+    </evb-formcontrol>
+    <evb-formcontrol>
       <input type="radio" id="brushtype-circular" formControlName="brushType" [value]="brushType.circular"/>
       <label for="brushtype-circular">circular</label>
-    </div>
-    <div>
+    </evb-formcontrol>
+    <evb-formcontrol>
       <input type="radio" id="brushtype-spray" formControlName="brushType" [value]="brushType.spray"/>
       <label for="brushtype-spray">spray</label>
-    </div>
-    <div>
+    </evb-formcontrol>
+    <evb-formcontrol>
       <input type="radio" id="brushtype-multipleLines" formControlName="brushType" [value]="brushType.multipleLines"/>
       <label for="brushtype-multipleLines">multipleLines</label>
-    </div>
+    </evb-formcontrol>
 
     <hr>
 
       <!-- <button (click)="draw.clear()">clear</button> -->
-    <div>
-      <label for="opacity">opacity</label>
-      <input type="range" id="opacity" min="0.0" max="1.0" step="0.1" value="1.0" placeholder="Opacity" formControlName="opacity" />
-    </div>
+      <evb-formcontrol>
+        <label for="opacity">opacity</label>
+        <input type="range" id="opacity" min="0.0" max="1.0" step="0.1" value="1.0" placeholder="Opacity" formControlName="opacity" />
+      </evb-formcontrol>
 
-    <div>
-      <label for="line-width">line width</label>
-      <input type="range" id="line-width" min="1" max="50" step="1" value="4" placeholder="Line width" formControlName="lineWidth"/>
-    </div>
+      <evb-formcontrol>
+        <label for="line-width">line width</label>
+        <input type="range" id="line-width" min="1" max="50" step="1" value="4" placeholder="Line width" formControlName="lineWidth"/>
+      </evb-formcontrol>
 
   </ng-container>
 
