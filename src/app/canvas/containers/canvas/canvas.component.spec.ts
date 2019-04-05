@@ -1,5 +1,6 @@
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ReactiveFormsModule } from '@angular/forms';
 import { SharedModule } from 'src/app/shared/shared.module';
 
 import { CanvasImageComponent, ColorPickerComponent } from '../../components';
@@ -7,7 +8,6 @@ import { DrawingToolbarComponent } from '../../components/drawing-toolbar/drawin
 import { DrawDirective } from '../../directives/draw.directive';
 
 import { CanvasComponent } from './canvas.component';
-import { ReactiveFormsModule } from '@angular/forms';
 
 describe('CanvasComponent', () => {
   let component: CanvasComponent;
@@ -22,7 +22,10 @@ describe('CanvasComponent', () => {
         DrawingToolbarComponent,
         DrawDirective
       ],
-      imports: [ReactiveFormsModule, SharedModule],
+      imports: [
+        ReactiveFormsModule,
+        SharedModule
+      ],
       schemas: [CUSTOM_ELEMENTS_SCHEMA]
     })
       .compileComponents();
