@@ -1,8 +1,8 @@
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { DrawingToolbarComponent } from './drawing-toolbar.component';
-import { ReactiveFormsModule } from '@angular/forms';
 
 describe('DrawingToolbarComponent', () => {
   let component: DrawingToolbarComponent;
@@ -10,8 +10,12 @@ describe('DrawingToolbarComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [DrawingToolbarComponent],
-      imports: [ReactiveFormsModule],
+      declarations: [
+        DrawingToolbarComponent
+      ],
+      imports: [
+        ReactiveFormsModule
+      ],
       schemas: [CUSTOM_ELEMENTS_SCHEMA]
     })
       .compileComponents();
