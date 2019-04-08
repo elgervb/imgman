@@ -74,3 +74,12 @@ evb-flyout {
 .flyout-handle:hover {
   width: 2em;
 }
+
+evb-filepicker {
+  align-items: center;
+  flex-direction: column;
+}
+.pick-image-title {
+  color: #999;
+  font-size: 3rem;
+}
