@@ -1,4 +1,5 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
+import { PickedFile } from '@elgervb/stencil-components/dist/types/components/file-picker/pickedfile';
 import { Rgb } from 'src/app/imgman/color/rgb';
 
 import { DrawingSettings } from '../../components/drawing-toolbar/drawing-toolbar.component';
@@ -9,6 +10,8 @@ import { DrawingSettings } from '../../components/drawing-toolbar/drawing-toolba
   styleUrls: ['./canvas.component.css']
 })
 export class CanvasComponent implements OnInit {
+
+  @Input() image: string;
 
   constructor() { }
 
@@ -39,6 +42,10 @@ export class CanvasComponent implements OnInit {
 
   setColor(color: Rgb) {
     setTimeout(() => this.color = color, 0);
+  }
+
+  setImage(event: CustomEvent<PickedFile>) {
+    this.image = event.detail.dataUrl;
   }
 
   setDrawingSettings(drawingSettings: DrawingSettings) {

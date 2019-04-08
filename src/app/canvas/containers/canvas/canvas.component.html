@@ -1,6 +1,7 @@
 
 <app-canvas-image
-  image="/assets/ugly-dog.png"
+  *ngIf="image; else uploadYourImage"
+  [image]="image"
   (ready)="canvasIsReady($event)"
   appDraw
   [canvas]="canvas"
@@ -10,6 +11,14 @@
   [brushType]="drawingSettings?.brushType"
   [drawingEnabled]="drawingSettings?.enabled">
 </app-canvas-image>
+
+<ng-template #uploadYourImage>
+  <evb-filepicker accept="image/*" [multiple]="false" (pick)="setImage($event)">
+    <h3 class="pick-image-title">Pick an image to get started</h3>
+    <evb-button>Pick a image</evb-button>
+  </evb-filepicker>
+</ng-template>
+
 
 <!-- TODO: create a color picker toolbar -->
 <evb-flyout #flyout  header="Drawing" open="true">
