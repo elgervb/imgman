@@ -1,3 +1,6 @@
+
+@import url('https://fonts.googleapis.com/css?family=Ubuntu');
+
 :root{
   --evb-primary-color:#677bd5;
   --evb-primary-color-darker:#3a4da5;
@@ -21,6 +24,7 @@ html {
   box-sizing: inherit;
 }
 body, button, select, input, textarea {
+  font-family: 'Ubuntu', sans-serif;
   font-style: normal;
   font-weight: 400;
   line-height: 16px;
