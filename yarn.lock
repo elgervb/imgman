@@ -101,9 +101,15 @@
     rxjs "6.3.3"
 
 "@angular/animations@~7.2.0":
+<<<<<<< HEAD
   version "7.2.13"
   resolved "https://registry.yarnpkg.com/@angular/animations/-/animations-7.2.13.tgz#9a49482ea2e0386a691d5b9d7be422251b66d767"
   integrity sha512-Z0g0DthJnxTZ0dUc5BlojMq/0XIikhWzTqq0ym8w3G6jqBJD0OJ0jRCIfV0Leqlgzq6Jzvdrx0/JngBiKi5+uA==
+=======
+  version "7.2.12"
+  resolved "https://registry.yarnpkg.com/@angular/animations/-/animations-7.2.12.tgz#822593a53392462b9415ad5960cf0ad5e84e88df"
+  integrity sha512-J7d9hYXNqNz2kVxKEZlAAn4iojjF63WfGenEnMCtFgXU26ok03EAiR+VaiIqIvcevxvvR+iDrCHb+Hub0C212w==
+>>>>>>> #3 be able to drop a file
   dependencies:
     tslib "^1.9.0"
 
@@ -127,16 +133,28 @@
     symbol-observable "1.2.0"
 
 "@angular/common@~7.2.0":
+<<<<<<< HEAD
   version "7.2.13"
   resolved "https://registry.yarnpkg.com/@angular/common/-/common-7.2.13.tgz#187fc1b053957c1654537ff4be6cc286ada76401"
   integrity sha512-NYlzUkFVgjLg9VB6/lkd8ZV0ZezSiv9vlg+26wOyw7x+gahRrm5WMAGF7eBLrXoZPEaoOO0uhKWKo7oiA0aufA==
+=======
+  version "7.2.12"
+  resolved "https://registry.yarnpkg.com/@angular/common/-/common-7.2.12.tgz#e36d4f96737783226aeaf81a70f13fe5e902c70a"
+  integrity sha512-JzcysRDfx2dvvcZ4uwgn+6gFDYlbH9j2Uyz6fWOSinAA0kcleOu/Gb77XbCI5M3Xvh1hxHVyz0Zxv/Pi0Y1O1g==
+>>>>>>> #3 be able to drop a file
   dependencies:
     tslib "^1.9.0"
 
 "@angular/compiler-cli@~7.2.0":
+<<<<<<< HEAD
   version "7.2.13"
   resolved "https://registry.yarnpkg.com/@angular/compiler-cli/-/compiler-cli-7.2.13.tgz#6968310becf152eacc328584650035fa797e1b9f"
   integrity sha512-UpA6V+GCY9qKj5j6tvzun2DJNjqRKjCrQgJqD5BIf4FTAKjVgqOvh++d23tbdltdjXlbHqUVRgfeXltbO91fWg==
+=======
+  version "7.2.12"
+  resolved "https://registry.yarnpkg.com/@angular/compiler-cli/-/compiler-cli-7.2.12.tgz#bb25fecf6b48ac1f013cf442a62edcbf06a7a000"
+  integrity sha512-EXJuN9XuYjO9gwe5JWfatb64ljPjItZh5bd1MQtntMJONS4ntOtwiCd9RuNVK2ZXM7Co9PcvzE1qynB6tMseCw==
+>>>>>>> #3 be able to drop a file
   dependencies:
     canonical-path "1.0.0"
     chokidar "^2.1.1"
@@ -151,27 +169,46 @@
     yargs "9.0.1"
 
 "@angular/compiler@~7.2.0":
+<<<<<<< HEAD
   version "7.2.13"
   resolved "https://registry.yarnpkg.com/@angular/compiler/-/compiler-7.2.13.tgz#30910c2a3e3b4062593c0aa1cdc8d1d5dc1207f0"
   integrity sha512-k0IvaozNIlrPKUNF3M/NXMb/jfHBCDO9uRYA6h+84FFY4Y9po40c7YXfsfUxGKwouTWyemaxy9iXlLEnd3ELSQ==
+=======
+  version "7.2.12"
+  resolved "https://registry.yarnpkg.com/@angular/compiler/-/compiler-7.2.12.tgz#0cbaa60f7276d4ad0685adb235101c75e37630b1"
+  integrity sha512-B1N+/ECqIQz7PD2Zjb/21OOCmrXkl8DSXCBGNMXOSng+uYJM4dFPWkYkaAeHj8gcLDHvIPWlsapJ6JqyB3RPxA==
+>>>>>>> #3 be able to drop a file
   dependencies:
     tslib "^1.9.0"
 
 "@angular/core@~7.2.0":
+<<<<<<< HEAD
   version "7.2.13"
   resolved "https://registry.yarnpkg.com/@angular/core/-/core-7.2.13.tgz#3ec4ca5027d8e259b2a13c9901c86d1dc50fc5b6"
   integrity sha512-vHD69xxDDSQaE8KfHeY2STJSd3xgfsz3/meBCAnT+Bpq9LqxL8DuPlrkC0kyBa2vyj/BwPR3CJNTaQrZcszJ/w==
+=======
+  version "7.2.12"
+  resolved "https://registry.yarnpkg.com/@angular/core/-/core-7.2.12.tgz#506b4e9280cdf03a0028d1fc143c4109fc8d4ef0"
+  integrity sha512-E5BtJPL4Fz1xyGTsoE4LELoZ33x0S0lJ0iUKqLRFeKKYM/fJ8l8mVNSZ7LnURTwpcjCiHcCRMcaCfuXWj7Kqhw==
+>>>>>>> #3 be able to drop a file
   dependencies:
     tslib "^1.9.0"
 
 "@angular/forms@~7.2.0":
+<<<<<<< HEAD
   version "7.2.13"
   resolved "https://registry.yarnpkg.com/@angular/forms/-/forms-7.2.13.tgz#27686331b6501a86fbb6c25904781ec233cdb059"
   integrity sha512-dBz7kYa8XoCKxZ+3EvYt6CxHZhM9Qbn3uYkLMsPA+NC6GtIt/tmYn1kNn+YWgVWZtWLvYRaOtYiCuMUJaRNQQw==
+=======
+  version "7.2.12"
+  resolved "https://registry.yarnpkg.com/@angular/forms/-/forms-7.2.12.tgz#0ffbbdb2b6fd19bf61cf09e1911d2cbc82b88399"
+  integrity sha512-gQU8663C9LOyuza87XDkEQ2HXbaLt3LY8X45swUNfe+BvpKNhF5ZwwY22d93wuzvm/vFrCTPK7949ImfUW0XnA==
+>>>>>>> #3 be able to drop a file
   dependencies:
     tslib "^1.9.0"
 
 "@angular/language-service@~7.2.0":
+<<<<<<< HEAD
   version "7.2.13"
   resolved "https://registry.yarnpkg.com/@angular/language-service/-/language-service-7.2.13.tgz#941cb098657efdbc386ef8e54d2d893497f68c20"
   integrity sha512-1bNWJpwH9wB0JybkbjdQp9J4bGmGxJX6BG7Mz3188Wc4J+aNy696Gc6IaJs7tFK8VXAdJrTJ5jGr9Oiu+ATe8w==
@@ -180,20 +217,42 @@
   version "7.2.13"
   resolved "https://registry.yarnpkg.com/@angular/platform-browser-dynamic/-/platform-browser-dynamic-7.2.13.tgz#3aee18e422d5ef69ced4d4749031b23647dfad57"
   integrity sha512-3+/BzrNLQ/Tn1hoPal3fvIeB3S/P3e00gHcH3oK+hfACYgWxLE1oIHL+w4NE2eTIJbHfphKhuascMaOH5WNlkg==
+=======
+  version "7.2.12"
+  resolved "https://registry.yarnpkg.com/@angular/language-service/-/language-service-7.2.12.tgz#ed4d98086b97e4b52acac988dc0cf9b66ffb86bc"
+  integrity sha512-dHHcAtCQ+ECoZa/bkm1diMZuxy/e+x2/qzClfKquO47EPqOIXYKCKZRqgGNHxdbUSRpmIEanfj/li4S7doCHZw==
+
+"@angular/platform-browser-dynamic@~7.2.0":
+  version "7.2.12"
+  resolved "https://registry.yarnpkg.com/@angular/platform-browser-dynamic/-/platform-browser-dynamic-7.2.12.tgz#be125de4c305d9fbbb4c65764879f7cc27177193"
+  integrity sha512-maKmjCTaS+jrXnor9qVJZfkWAKrt6neIlYrjvcr9v2YUqv9vdMcd5WRaODvIXBqwh65gpMxk3hbZ48Yjh8EbBQ==
+>>>>>>> #3 be able to drop a file
   dependencies:
     tslib "^1.9.0"
 
 "@angular/platform-browser@~7.2.0":
+<<<<<<< HEAD
   version "7.2.13"
   resolved "https://registry.yarnpkg.com/@angular/platform-browser/-/platform-browser-7.2.13.tgz#6e87de07a7938a81981d75da20e2d5d31ec61ca9"
   integrity sha512-4n9De4sOwVoYHh6IGO2+UQIjABqGAXk4RdrEGpXqPBHCNO4sF43c2JsXbPTU4kjPVwTwposfLlKEOjTXfwxGow==
+=======
+  version "7.2.12"
+  resolved "https://registry.yarnpkg.com/@angular/platform-browser/-/platform-browser-7.2.12.tgz#35f48efc5439e932cbbde24765c68acb7ea43afd"
+  integrity sha512-rhKxUtWM6LfM0cK0kVzQpdnzfGeL3KImk6kNn+RrZiXLk2N/pnwbrzfd6VUtm+zdg54S4BO8ui1NahwIC/PSKw==
+>>>>>>> #3 be able to drop a file
   dependencies:
     tslib "^1.9.0"
 
 "@angular/router@~7.2.0":
+<<<<<<< HEAD
   version "7.2.13"
   resolved "https://registry.yarnpkg.com/@angular/router/-/router-7.2.13.tgz#9b470e37f57ddf2741e21d1f299974cf48b7e938"
   integrity sha512-pTdJT9TXk1A9YMa6C2zRRqLB4GPGMSik838P7n+yGrzhdybiudZU9T3egcxDRCWQMjsobVBRKLEUn405n3Hjgg==
+=======
+  version "7.2.12"
+  resolved "https://registry.yarnpkg.com/@angular/router/-/router-7.2.12.tgz#73d168534db8a749efcda1507bbf75721d018a3e"
+  integrity sha512-n7EFKuOa6YDDvGZT/t7mXfQMuomkTVPJcWkpfPrViAKi4mcUnaU5IqYiBnv/WJfDDqocVD/Yf9YQD9zAajthEw==
+>>>>>>> #3 be able to drop a file
   dependencies:
     tslib "^1.9.0"
 
@@ -374,9 +433,15 @@
     "@types/jest-diff" "*"
 
 "@types/node@*":
+<<<<<<< HEAD
   version "11.13.5"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-11.13.5.tgz#266564afa8a6a09dc778dfacc703ed3f09c80516"
   integrity sha512-/OMMBnjVtDuwX1tg2pkYVSqRIDSmNTnvVvmvP/2xiMAAWf4a5+JozrApCrO4WCAILmXVxfNoQ3E+0HJbNpFVGg==
+=======
+  version "11.13.2"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-11.13.2.tgz#dc85dde46aa8740bb4aed54b8104250f8f849503"
+  integrity sha512-HOtU5KqROKT7qX/itKHuTtt5fV0iXbheQvrgbLNXFJQBY/eh+VS5vmmTAVlo3qIGMsypm0G4N1t2AXjy1ZicaQ==
+>>>>>>> #3 be able to drop a file
 
 "@types/node@~8.9.4":
   version "8.9.5"
@@ -1348,6 +1413,7 @@ browserify-zlib@^0.2.0:
     pako "~1.0.5"
 
 browserslist@^4.4.1:
+<<<<<<< HEAD
   version "4.5.5"
   resolved "https://registry.yarnpkg.com/browserslist/-/browserslist-4.5.5.tgz#fe1a352330d2490d5735574c149a85bc18ef9b82"
   integrity sha512-0QFO1r/2c792Ohkit5XI8Cm8pDtZxgNl2H6HU4mHrpYz7314pEYcsAVVatM0l/YmxPnEzh9VygXouj4gkFUTKA==
@@ -1355,6 +1421,15 @@ browserslist@^4.4.1:
     caniuse-lite "^1.0.30000960"
     electron-to-chromium "^1.3.124"
     node-releases "^1.1.14"
+=======
+  version "4.5.4"
+  resolved "https://registry.yarnpkg.com/browserslist/-/browserslist-4.5.4.tgz#166c4ecef3b51737a42436ea8002aeea466ea2c7"
+  integrity sha512-rAjx494LMjqKnMPhFkuLmLp8JWEX0o8ADTGeAbOqaF+XCvYLreZrG5uVjnPBlAQ8REZK4pzXGvp0bWgrFtKaag==
+  dependencies:
+    caniuse-lite "^1.0.30000955"
+    electron-to-chromium "^1.3.122"
+    node-releases "^1.1.13"
+>>>>>>> #3 be able to drop a file
 
 browserstack@^1.5.1:
   version "1.5.2"
@@ -1519,10 +1594,17 @@ camelcase@^4.1.0:
   resolved "https://registry.yarnpkg.com/camelcase/-/camelcase-4.1.0.tgz#d545635be1e33c542649c69173e5de6acfae34dd"
   integrity sha1-1UVjW+HjPFQmScaRc+Xeas+uNN0=
 
+<<<<<<< HEAD
 caniuse-lite@^1.0.30000929, caniuse-lite@^1.0.30000960:
   version "1.0.30000962"
   resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30000962.tgz#6c10c3ab304b89bea905e66adf98c0905088ee44"
   integrity sha512-WXYsW38HK+6eaj5IZR16Rn91TGhU3OhbwjKZvJ4HN/XBIABLKfbij9Mnd3pM0VEwZSlltWjoWg3I8FQ0DGgNOA==
+=======
+caniuse-lite@^1.0.30000929, caniuse-lite@^1.0.30000955:
+  version "1.0.30000957"
+  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30000957.tgz#fb1026bf184d7d62c685205358c3b24b9e29f7b3"
+  integrity sha512-8wxNrjAzyiHcLXN/iunskqQnJquQQ6VX8JHfW5kLgAPRSiSuKZiNfmIkP5j7jgyXqAQBSoXyJxfnbCFS0ThSiQ==
+>>>>>>> #3 be able to drop a file
 
 canonical-path@1.0.0:
   version "1.0.0"
@@ -1766,10 +1848,22 @@ combined-stream@^1.0.6, combined-stream@~1.0.6:
   dependencies:
     delayed-stream "~1.0.0"
 
+<<<<<<< HEAD
 commander@^2.12.1, commander@^2.19.0, commander@~2.20.0:
   version "2.20.0"
   resolved "https://registry.yarnpkg.com/commander/-/commander-2.20.0.tgz#d58bb2b5c1ee8f87b0d340027e9e94e222c5a422"
   integrity sha512-7j2y+40w61zy6YC2iRNpUe/NwhNyoXrYpHMrSunaMG64nRnaf96zO/KMQR4OyN/UnE5KLyEBnKHd4aG3rskjpQ==
+=======
+commander@^2.12.1, commander@^2.19.0:
+  version "2.20.0"
+  resolved "https://registry.yarnpkg.com/commander/-/commander-2.20.0.tgz#d58bb2b5c1ee8f87b0d340027e9e94e222c5a422"
+  integrity sha512-7j2y+40w61zy6YC2iRNpUe/NwhNyoXrYpHMrSunaMG64nRnaf96zO/KMQR4OyN/UnE5KLyEBnKHd4aG3rskjpQ==
+
+commander@~2.19.0:
+  version "2.19.0"
+  resolved "https://registry.yarnpkg.com/commander/-/commander-2.19.0.tgz#f6198aa84e5b83c46054b94ddedbfed5ee9ff12a"
+  integrity sha512-6tvAOO+D6OENvRAh524Dh9jcfKTYDQAqvqezbCW82xj5X0pSrcpxtvRKHLG0yBY6SD7PSDrJaj+0AiOcKVd1Xg==
+>>>>>>> #3 be able to drop a file
 
 commondir@^1.0.1:
   version "1.0.1"
@@ -2397,7 +2491,11 @@ ee-first@1.1.1:
   resolved "https://registry.yarnpkg.com/ee-first/-/ee-first-1.1.1.tgz#590c61156b0ae2f4f0255732a158b266bc56b21d"
   integrity sha1-WQxhFWsK4vTwJVcyoViyZrxWsh0=
 
+<<<<<<< HEAD
 electron-to-chromium@^1.3.124:
+=======
+electron-to-chromium@^1.3.122:
+>>>>>>> #3 be able to drop a file
   version "1.3.124"
   resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.124.tgz#861fc0148748a11b3e5ccebdf8b795ff513fa11f"
   integrity sha512-glecGr/kFdfeXUHOHAWvGcXrxNU+1wSO/t5B23tT1dtlvYB26GY8aHzZSWD7HqhqC800Lr+w/hQul6C5AF542w==
@@ -4585,7 +4683,11 @@ js-tokens@^3.0.2:
   resolved "https://registry.yarnpkg.com/js-tokens/-/js-tokens-3.0.2.tgz#9866df395102130e38f7f996bceb65443209c25b"
   integrity sha1-mGbfOVECEw449/mWvOtlRDIJwls=
 
+<<<<<<< HEAD
 js-yaml@^3.13.0, js-yaml@^3.7.0, js-yaml@^3.9.0:
+=======
+js-yaml@^3.12.0, js-yaml@^3.7.0, js-yaml@^3.9.0:
+>>>>>>> #3 be able to drop a file
   version "3.13.1"
   resolved "https://registry.yarnpkg.com/js-yaml/-/js-yaml-3.13.1.tgz#aff151b30bfdfa8e49e05da22e7415e9dfa37847"
   integrity sha512-YfbcO7jXDdyj0DGxYVSlSeQNHbD7XPWvrVWeVUujrQEoZzWJIRrCPoyk6kL6IAjAG2IolMK4T0hNUe0HOUs5Jw==
@@ -5227,10 +5329,22 @@ miller-rabin@^4.0.0:
     bn.js "^4.0.0"
     brorand "^1.0.1"
 
+<<<<<<< HEAD
 "mime-db@>= 1.38.0 < 2", mime-db@~1.39.0:
   version "1.39.0"
   resolved "https://registry.yarnpkg.com/mime-db/-/mime-db-1.39.0.tgz#f95a20275742f7d2ad0429acfe40f4233543780e"
   integrity sha512-DTsrw/iWVvwHH+9Otxccdyy0Tgiil6TWK/xhfARJZF/QFhwOgZgOIvA2/VIGpM8U7Q8z5nDmdDWC6tuVMJNibw==
+=======
+"mime-db@>= 1.38.0 < 2":
+  version "1.39.0"
+  resolved "https://registry.yarnpkg.com/mime-db/-/mime-db-1.39.0.tgz#f95a20275742f7d2ad0429acfe40f4233543780e"
+  integrity sha512-DTsrw/iWVvwHH+9Otxccdyy0Tgiil6TWK/xhfARJZF/QFhwOgZgOIvA2/VIGpM8U7Q8z5nDmdDWC6tuVMJNibw==
+
+mime-db@~1.38.0:
+  version "1.38.0"
+  resolved "https://registry.yarnpkg.com/mime-db/-/mime-db-1.38.0.tgz#1a2aab16da9eb167b49c6e4df2d9c68d63d8e2ad"
+  integrity sha512-bqVioMFFzc2awcdJZIzR3HjZFX20QhilVS7hytkKrv7xFAn8bM1gzc/FOX2awLISvWe0PV8ptFKcon+wZ5qYkg==
+>>>>>>> #3 be able to drop a file
 
 mime-types@^2.1.12, mime-types@~2.1.17, mime-types@~2.1.18, mime-types@~2.1.19:
   version "2.1.23"
@@ -5559,10 +5673,17 @@ node-pre-gyp@^0.12.0:
     semver "^5.3.0"
     tar "^4"
 
+<<<<<<< HEAD
 node-releases@^1.1.14:
   version "1.1.15"
   resolved "https://registry.yarnpkg.com/node-releases/-/node-releases-1.1.15.tgz#9e76a73b0eca3bf7801addaa0e6ce90c795f2b9a"
   integrity sha512-cKV097BQaZr8LTSRUa2+oc/aX5L8UkZtPQrMSTgiJEeaW7ymTDCoRaGCoaTqk0lqnalcoSHu4wjSl0Cmj2+bMw==
+=======
+node-releases@^1.1.13:
+  version "1.1.13"
+  resolved "https://registry.yarnpkg.com/node-releases/-/node-releases-1.1.13.tgz#8c03296b5ae60c08e2ff4f8f22ae45bd2f210083"
+  integrity sha512-fKZGviSXR6YvVPyc011NHuJDSD8gFQvLPmc2d2V3BS4gr52ycyQ1Xzs7a8B+Ax3Ni/W+5h1h4SqmzeoA8WZRmA==
+>>>>>>> #3 be able to drop a file
   dependencies:
     semver "^5.3.0"
 

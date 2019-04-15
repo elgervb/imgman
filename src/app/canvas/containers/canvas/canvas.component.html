@@ -13,10 +13,12 @@
 </app-canvas-image>
 
 <ng-template #uploadYourImage>
-  <evb-filepicker accept="image/*" [multiple]="false" (pick)="setImage($event)">
-    <h3 class="pick-image-title">Pick an image to get started</h3>
-    <evb-button>Pick a image</evb-button>
-  </evb-filepicker>
+  <evb-dropzone (dropped)="setImage($event)">
+    <evb-filepicker accept="image/*" [multiple]="false" (pick)="setImage($event)">
+      <h3 class="pick-image-title">Pick an image to get started</h3>
+      <evb-button>Pick a image</evb-button>
+    </evb-filepicker>
+  </evb-dropzone>
 </ng-template>
 
 
