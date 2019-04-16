@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Rgb } from 'src/app/imgman/color/rgb';
 import { rgbToString } from 'src/app/imgman/color/rgb-to-string';
 
@@ -12,6 +12,8 @@ import { DrawingSettings } from '../../components/drawing-toolbar/drawing-toolba
 export class CanvasComponent implements OnInit {
 
   constructor() { }
+
+  @ViewChild('flyout') flyout: ElementRef<HTMLEvbFlyoutElement>;
 
   canvas: HTMLCanvasElement;
 
@@ -53,5 +55,9 @@ export class CanvasComponent implements OnInit {
 
   setProgress(progress: number) {
     this.progress = progress;
+  }
+
+  showFlyout() {
+    this.flyout.nativeElement.toggle(true);
   }
 }

@@ -12,15 +12,17 @@
 </app-canvas-image>
 
 <!-- TODO: create a color picker toolbar -->
-<app-toolbar class="colorpicker-toolbar" title="Color picker">
+<evb-flyout #flyout  header="Drawing" open="true">
+
   <ng-container *ngIf="canvas && colorWheel">
     <app-color-picker [canvas]="canvas" [secondaryCanvas]="colorWheel" (picked)="setColor($event)"></app-color-picker>
   </ng-container>
   <div>
     <app-canvas-image image="/assets/color-wheel.png" max="100" (ready)="colorWheelReady($event)"></app-canvas-image>
   </div>
-</app-toolbar>
 
-<app-toolbar class="drawing-toolbar" title="drawing">
   <app-drawing-toolbar (changed)="setDrawingSettings($event)"></app-drawing-toolbar>
-</app-toolbar>
+
+</evb-flyout>
+
+<div class="flyout-handle" (click)="showFlyout()"></div>

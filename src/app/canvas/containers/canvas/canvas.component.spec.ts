@@ -6,6 +6,7 @@ import { DrawingToolbarComponent } from '../../components/drawing-toolbar/drawin
 import { DrawDirective } from '../../directives/draw.directive';
 
 import { CanvasComponent } from './canvas.component';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 describe('CanvasComponent', () => {
   let component: CanvasComponent;
@@ -20,7 +21,8 @@ describe('CanvasComponent', () => {
         DrawingToolbarComponent,
         DrawDirective
       ],
-      imports: [SharedModule]
+      imports: [SharedModule],
+      schemas: [CUSTOM_ELEMENTS_SCHEMA]
     })
       .compileComponents();
   }));

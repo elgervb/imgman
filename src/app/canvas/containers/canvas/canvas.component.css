@@ -24,3 +24,20 @@ app-toolbar {
 .stencil-toolbar {
   left: 22rem;
 }
+
+.flyout-handle {
+  cursor: pointer   ;
+  height: 4em;
+  width: 1em;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  border-radius: 0 1em 1em 0;
+  transition: all .15s ease-in;
+  background: linear-gradient(to right, var(--evb-primary-color-darker) 0%, var(--evb-primary-color-darker) 100%);
+}
+
+.flyout-handle:hover {
+  width: 2em;
+}
