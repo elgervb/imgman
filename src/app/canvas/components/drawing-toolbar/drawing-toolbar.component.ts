@@ -24,7 +24,7 @@ export class DrawingToolbarComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.form = this.formBuilder.group({
-      brushType: [BrushType.pen, Validators.required],
+      brushType: [BrushType.marker, Validators.required],
       enabled: [false, Validators.required],
       opacity: [1.0, [Validators.required, Validators.min(MIN_OPACITY), Validators.max(1)]],
       lineWidth: [4, [Validators.required, Validators.min(1), Validators.max(100)]]

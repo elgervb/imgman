@@ -35,12 +35,12 @@
       <!-- <button (click)="draw.clear()">clear</button> -->
       <evb-formcontrol>
         <label for="opacity">opacity</label>
-        <input type="range" id="opacity" min="0.0" max="1.0" step="0.1" value="1.0" placeholder="Opacity" formControlName="opacity" />
+        <evb-range evbControl [min]="0.0" [max]="1.0" [step]="0.1" [value]="1.0" placeholder="Opacity" formControlName="opacity"></evb-range>
       </evb-formcontrol>
 
       <evb-formcontrol>
         <label for="line-width">line width</label>
-        <input type="range" id="line-width" min="1" max="50" step="1" value="4" placeholder="Line width" formControlName="lineWidth"/>
+        <evb-range evbControl min="1" max="50" step="1" value="4" placeholder="Line width" formControlName="lineWidth"></evb-range>
       </evb-formcontrol>
 
   </ng-container>
