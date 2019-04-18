@@ -20,6 +20,9 @@
       "node_modules/@types",
       "node_modules/@elgervb"
     ],
+    "types": [
+      "jest"
+    ],
     "lib": [
       "es2018",
       "dom"
