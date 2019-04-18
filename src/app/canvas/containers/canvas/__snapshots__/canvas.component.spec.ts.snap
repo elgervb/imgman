@@ -1,0 +1,57 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CanvasComponent should create 1`] = `
+<app-canvas
+  flyout={[Function ElementRef]}
+>
+  <app-canvas-image
+    appdraw=""
+    image="/assets/ugly-dog.png"
+    ng-reflect-image="/assets/ugly-dog.png"
+  >
+    
+    <canvas />
+  </app-canvas-image><evb-flyout
+    header="Drawing"
+    open="true"
+  >
+    
+    <div>
+      <app-canvas-image
+        image="/assets/color-wheel.png"
+        max="100"
+        ng-reflect-image="/assets/color-wheel.png"
+        ng-reflect-max="100"
+      >
+        
+        <canvas />
+      </app-canvas-image>
+    </div>
+    <app-drawing-toolbar>
+      <form
+        class="ng-untouched ng-pristine ng-valid"
+        ng-reflect-form="[object Object]"
+        novalidate=""
+      >
+        <evb-formcontrol>
+          <label
+            for="enabled"
+          >
+            enable
+          </label>
+          <input
+            class="ng-untouched ng-pristine ng-valid"
+            formcontrolname="enabled"
+            id="enabled"
+            ng-reflect-name="enabled"
+            type="checkbox"
+          />
+        </evb-formcontrol>
+        
+      </form>
+    </app-drawing-toolbar>
+  </evb-flyout><div
+    class="flyout-handle"
+  />
+</app-canvas>
+`;

@@ -8,9 +8,9 @@ describe('AverageColorComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AverageColorComponent ]
+      declarations: [AverageColorComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
@@ -21,5 +21,7 @@ describe('AverageColorComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+
+    expect(fixture).toMatchSnapshot();
   });
 });

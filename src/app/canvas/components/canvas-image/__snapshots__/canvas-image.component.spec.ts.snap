@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CanvasImageComponent should create 1`] = `
+<app-canvas-image
+  canvasEl={[Function ElementRef]}
+  canvasReady$={[Function Observable]}
+  ready={[Function EventEmitter]}
+>
+  <canvas />
+</app-canvas-image>
+`;

@@ -8,9 +8,9 @@ describe('ResizeComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ResizeComponent ]
+      declarations: [ResizeComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
@@ -21,5 +21,7 @@ describe('ResizeComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+
+    expect(fixture).toMatchSnapshot();
   });
 });

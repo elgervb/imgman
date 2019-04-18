@@ -8,9 +8,9 @@ describe('CanvasImageComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CanvasImageComponent ]
+      declarations: [CanvasImageComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
@@ -21,5 +21,7 @@ describe('CanvasImageComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+
+    expect(fixture).toMatchSnapshot();
   });
 });

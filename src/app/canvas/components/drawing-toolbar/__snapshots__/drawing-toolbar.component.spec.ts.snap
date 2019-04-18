@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DrawingToolbarComponent should create 1`] = `
+<app-drawing-toolbar
+  brushType={[Function Object]}
+  changed={[Function EventEmitter]}
+  destroyed$={[Function Subject]}
+  form={[Function FormGroup]}
+  formBuilder={[Function FormBuilder]}
+>
+  <form
+    class="ng-untouched ng-pristine ng-valid"
+    ng-reflect-form="[object Object]"
+    novalidate=""
+  >
+    <evb-formcontrol>
+      <label
+        for="enabled"
+      >
+        enable
+      </label>
+      <input
+        class="ng-untouched ng-pristine ng-valid"
+        formcontrolname="enabled"
+        id="enabled"
+        ng-reflect-name="enabled"
+        type="checkbox"
+      />
+    </evb-formcontrol>
+    
+  </form>
+</app-drawing-toolbar>
+`;
