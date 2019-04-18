@@ -1,6 +1,17 @@
 import { Directive, ElementRef, HostListener, Renderer2 } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
+/**
+ * Poses as a bridge between all @elgervb/stencil-components and Angular.
+ *
+ * Usage:
+ * ```
+ * <evb-formcontrol>
+ *   <label for="form-control">form control</label>
+ *   <evb-range evbControl min="1" max="50" step="1" value="4" formControlName="formControl"></evb-range>
+ * </evb-formcontrol>
+ * ```
+ */
 @Directive({
   // tslint:disable-next-line: directive-selector
   selector: '[evbControl]',
@@ -40,5 +51,7 @@ export class EvbValueAccessorDirective implements ControlValueAccessor {
     };
   }
 
-  registerOnTouched() { }
+  registerOnTouched(fn: (value: string) => void) {
+    this.onBlur = value => { fn(value); };
+  }
 }
