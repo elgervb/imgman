@@ -4,7 +4,7 @@
   (ready)="canvasIsReady($event)"
   appDraw
   [canvas]="canvas"
-  [color]="color"
+  [color]="color | rgbToString"
   [lineWidth]="drawingSettings?.lineWidth"
   [globalAlpha]="drawingSettings?.opacity"
   [brushType]="drawingSettings?.brushType"
@@ -15,10 +15,20 @@
 <evb-flyout #flyout  header="Drawing" open="true">
 
   <ng-container *ngIf="canvas && colorWheel">
-    <app-color-picker [canvas]="canvas" [secondaryCanvas]="colorWheel" (picked)="setColor($event)"></app-color-picker>
+    <app-color-picker
+      [canvas]="canvas"
+      [secondaryCanvas]="colorWheel"
+      (active)="setColorPickerActive($event)"
+      (picked)="setColor($event)"></app-color-picker>
   </ng-container>
-  <div>
-    <app-canvas-image image="/assets/color-wheel.png" max="100" (ready)="colorWheelReady($event)"></app-canvas-image>
+
+  <div class="current-color" [class.is-dark]="color | appIsDark" [style.background]="color | rgbToString">
+    <em>{{color | rgbToString}}</em>
+    <app-canvas-image
+      [style.visibility]="colorPickerActive ? 'visible' : 'hidden'"
+      image="/assets/color-wheel.png"
+      max="150"
+      (ready)="colorWheelReady($event)"></app-canvas-image>
   </div>
 
   <app-drawing-toolbar (changed)="setDrawingSettings($event)"></app-drawing-toolbar>

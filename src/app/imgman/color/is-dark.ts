@@ -2,7 +2,7 @@ import { Rgb } from './rgb';
 
 export function isDark(color: Rgb) {
 
-  let hsp;
+  let hsp: number;
 
   // HSP equation from http://alienryderflex.com/hsp.html
   hsp = Math.sqrt(

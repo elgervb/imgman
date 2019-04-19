@@ -7,6 +7,7 @@ exports[`CanvasComponent should create 1`] = `
   <app-canvas-image
     appdraw=""
     image="/assets/ugly-dog.png"
+    ng-reflect-color=""
     ng-reflect-image="/assets/ugly-dog.png"
   >
     
@@ -16,12 +17,18 @@ exports[`CanvasComponent should create 1`] = `
     open="true"
   >
     
-    <div>
+    <div
+      class="current-color"
+    >
+      <em>
+        
+      </em>
       <app-canvas-image
         image="/assets/color-wheel.png"
-        max="100"
+        max="150"
         ng-reflect-image="/assets/color-wheel.png"
-        ng-reflect-max="100"
+        ng-reflect-max="150"
+        style="visibility: hidden;"
       >
         
         <canvas />
@@ -33,18 +40,17 @@ exports[`CanvasComponent should create 1`] = `
         ng-reflect-form="[object Object]"
         novalidate=""
       >
-        <evb-formcontrol>
-          <label
-            for="enabled"
-          >
-            enable
+        <evb-formcontrol
+          class=""
+        >
+          <label>
+            Enable drawing
           </label>
-          <input
+          <evb-toggle
             class="ng-untouched ng-pristine ng-valid"
+            evbcontrol=""
             formcontrolname="enabled"
-            id="enabled"
             ng-reflect-name="enabled"
-            type="checkbox"
           />
         </evb-formcontrol>
         

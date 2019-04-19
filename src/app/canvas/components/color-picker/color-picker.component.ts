@@ -4,7 +4,6 @@ import { filter, map, startWith, takeUntil, tap } from 'rxjs/operators';
 import { average } from 'src/app/imgman/color/average';
 import { colorPicker } from 'src/app/imgman/color/color-picker';
 import { Rgb } from 'src/app/imgman/color/rgb';
-import { rgbToString } from 'src/app/imgman/color/rgb-to-string';
 
 @Component({
   selector: 'app-color-picker',
@@ -19,11 +18,12 @@ export class ColorPickerComponent implements OnInit, OnDestroy {
   @Input() secondaryCanvas: HTMLCanvasElement;
 
   @Output() readonly picked = new EventEmitter<Rgb>();
+  @Output() readonly active = new EventEmitter<boolean>();
 
-  color$: Observable<string>;
+  color$: Observable<Rgb>;
   active$ = new BehaviorSubject<boolean>(false);
 
-  private destroyed$ = new Subject();
+  private destroyed$ = new Subject<void>();
 
   @HostListener('document:keydown.escape')
   cancelActive() {
@@ -48,7 +48,6 @@ export class ColorPickerComponent implements OnInit, OnDestroy {
       map(event => colorPicker(event.target as HTMLCanvasElement, event.layerX, event.layerY)),
       startWith(average(this.canvas)),
       tap(color => this.picked.emit(color)),
-      map(rgbToString),
       takeUntil(this.destroyed$)
     );
   }
@@ -59,7 +58,9 @@ export class ColorPickerComponent implements OnInit, OnDestroy {
   }
 
   toggleActive(force?: boolean) {
-    this.active$.next(force ? force : !this.active$.getValue());
+    const active = force ? force : !this.active$.getValue();
+    this.active$.next(active);
+    this.active.emit(active);
   }
 
 }

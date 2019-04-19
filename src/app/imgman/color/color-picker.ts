@@ -11,6 +11,6 @@ export function colorPicker(canvas: HTMLCanvasElement, fromX: number, fromY: num
     g: data[1],
     b: data[2],
     // tslint:disable-next-line:no-magic-numbers
-    a: data[3] / 255
+    a: Math.round(data[3] / 255)
   };
 }
