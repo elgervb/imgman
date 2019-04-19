@@ -1,6 +1,5 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Rgb } from 'src/app/imgman/color/rgb';
-import { rgbToString } from 'src/app/imgman/color/rgb-to-string';
 
 import { DrawingSettings } from '../../components/drawing-toolbar/drawing-toolbar.component';
 
@@ -19,7 +18,8 @@ export class CanvasComponent implements OnInit {
 
   // TODO: move this to a color picker toolbar
   colorWheel: HTMLCanvasElement;
-  color: string;
+  color: Rgb;
+  colorPickerActive: boolean;
 
   drawingSettings: DrawingSettings;
 
@@ -38,7 +38,7 @@ export class CanvasComponent implements OnInit {
   }
 
   setColor(color: Rgb) {
-    setTimeout(() => this.color = rgbToString(color), 0);
+    setTimeout(() => this.color = color, 0);
   }
 
   setDrawingSettings(drawingSettings: DrawingSettings) {
@@ -55,6 +55,10 @@ export class CanvasComponent implements OnInit {
 
   setProgress(progress: number) {
     this.progress = progress;
+  }
+
+  setColorPickerActive(isActive: boolean) {
+    this.colorPickerActive = isActive;
   }
 
   showFlyout() {

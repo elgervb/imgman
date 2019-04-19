@@ -7,7 +7,6 @@ import { defineCustomElements } from '@elgervb/stencil-components/dist/loader';
 import { AppModule } from './app/app.module';
 import { environment } from './environments/environment';
 
-
 if (environment.production) {
   enableProdMode();
 }

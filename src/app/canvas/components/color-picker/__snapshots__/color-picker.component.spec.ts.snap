@@ -2,6 +2,7 @@
 
 exports[`ColorPickerComponent should create 1`] = `
 <app-color-picker
+  active={[Function EventEmitter]}
   active$={[Function BehaviorSubject]}
   canvas={[Function HTMLCanvasElement]}
   color$={[Function Observable]}
@@ -26,7 +27,6 @@ exports[`ColorPickerComponent should create 1`] = `
     </svg>
   </div><div
     class="current-color"
-    style="background: rgb(0, 0, 0);"
   />
 </app-color-picker>
 `;
