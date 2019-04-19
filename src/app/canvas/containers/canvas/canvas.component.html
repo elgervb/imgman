@@ -16,21 +16,22 @@
   <evb-dropzone (dropped)="setImage($event)">
     <evb-filepicker accept="image/*" [multiple]="false" (pick)="setImage($event)">
       <h3 class="pick-image-title">Pick an image to get started</h3>
-      <evb-button>Pick a image</evb-button>
+      <evb-button pill="true">Pick a image</evb-button>
     </evb-filepicker>
   </evb-dropzone>
 </ng-template>
 
 
 <!-- TODO: create a color picker toolbar -->
-<evb-flyout #flyout  header="Drawing" open="true">
+<evb-flyout #flyout  header="Drawing" open="true" *ngIf="image">
 
   <ng-container *ngIf="canvas && colorWheel">
     <app-color-picker
       [canvas]="canvas"
       [secondaryCanvas]="colorWheel"
       (active)="setColorPickerActive($event)"
-      (picked)="setColor($event)"></app-color-picker>
+      (picked)="setColor($event)">
+    </app-color-picker>
   </ng-container>
 
   <div class="current-color" [class.is-dark]="color | appIsDark" [style.background]="color | rgbToString">
@@ -39,11 +40,12 @@
       [style.visibility]="colorPickerActive ? 'visible' : 'hidden'"
       image="/assets/color-wheel.png"
       max="150"
-      (ready)="colorWheelReady($event)"></app-canvas-image>
+      (ready)="colorWheelReady($event)">
+    </app-canvas-image>
   </div>
 
   <app-drawing-toolbar (changed)="setDrawingSettings($event)"></app-drawing-toolbar>
 
 </evb-flyout>
 
-<div class="flyout-handle" (click)="showFlyout()"></div>
+<div class="flyout-handle" (click)="showFlyout()" *ngIf="image"></div>
