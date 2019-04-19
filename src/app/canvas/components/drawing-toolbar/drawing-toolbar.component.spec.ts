@@ -1,6 +1,7 @@
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { ReactiveFormsModule } from '@angular/forms';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 import { DrawingToolbarComponent } from './drawing-toolbar.component';
 
@@ -14,7 +15,8 @@ describe('DrawingToolbarComponent', () => {
         DrawingToolbarComponent
       ],
       imports: [
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        SharedModule
       ],
       schemas: [CUSTOM_ELEMENTS_SCHEMA]
     })

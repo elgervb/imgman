@@ -2,62 +2,23 @@
 
 exports[`CanvasComponent should create 1`] = `
 <app-canvas
-  flyout={[Function ElementRef]}
+  flyout="undefined"
 >
-  <app-canvas-image
-    appdraw=""
-    image="/assets/ugly-dog.png"
-    ng-reflect-color=""
-    ng-reflect-image="/assets/ugly-dog.png"
-  >
-    
-    <canvas />
-  </app-canvas-image><evb-flyout
-    header="Drawing"
-    open="true"
-  >
-    
-    <div
-      class="current-color"
+  <evb-dropzone>
+    <evb-filepicker
+      accept="image/*"
     >
-      <em>
-        
-      </em>
-      <app-canvas-image
-        image="/assets/color-wheel.png"
-        max="150"
-        ng-reflect-image="/assets/color-wheel.png"
-        ng-reflect-max="150"
-        style="visibility: hidden;"
+      <h3
+        class="pick-image-title"
       >
-        
-        <canvas />
-      </app-canvas-image>
-    </div>
-    <app-drawing-toolbar>
-      <form
-        class="ng-untouched ng-pristine ng-valid"
-        ng-reflect-form="[object Object]"
-        novalidate=""
+        Pick an image to get started
+      </h3>
+      <evb-button
+        pill="true"
       >
-        <evb-formcontrol
-          class=""
-        >
-          <label>
-            Enable drawing
-          </label>
-          <evb-toggle
-            class="ng-untouched ng-pristine ng-valid"
-            evbcontrol=""
-            formcontrolname="enabled"
-            ng-reflect-name="enabled"
-          />
-        </evb-formcontrol>
-        
-      </form>
-    </app-drawing-toolbar>
-  </evb-flyout><div
-    class="flyout-handle"
-  />
+        Pick a image
+      </evb-button>
+    </evb-filepicker>
+  </evb-dropzone>
 </app-canvas>
 `;

@@ -9,6 +9,7 @@ exports[`DrawingToolbarComponent should create 1`] = `
   formBuilder={[Function FormBuilder]}
 >
   <form
+    class="ng-untouched ng-pristine ng-valid"
     ng-reflect-form="[object Object]"
     novalidate=""
   >
@@ -19,8 +20,10 @@ exports[`DrawingToolbarComponent should create 1`] = `
         Enable drawing
       </label>
       <evb-toggle
+        class="ng-untouched ng-pristine ng-valid"
         evbcontrol=""
         formcontrolname="enabled"
+        ng-reflect-name="enabled"
       />
     </evb-formcontrol>
     
