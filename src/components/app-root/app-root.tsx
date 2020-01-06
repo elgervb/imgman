@@ -1,6 +1,5 @@
 import { Component, h } from '@stencil/core';
 
-
 @Component({
   tag: 'app-root',
   styleUrl: 'app-root.css',
@@ -8,21 +7,27 @@ import { Component, h } from '@stencil/core';
 })
 export class AppRoot {
 
+  compon
+
   render() {
     return (
       <div>
-        <header>
-          <h1>Stencil App Starter</h1>
-        </header>
+        <canvas height={window.innerHeight} width={window.innerWidth}></canvas>
 
-        <main>
-          <stencil-router>
-            <stencil-route-switch scrollTopOffset={0}>
-              <stencil-route url='/' component='app-home' exact={true} />
-              <stencil-route url='/profile/:name' component='app-profile' />
-            </stencil-route-switch>
-          </stencil-router>
-        </main>
+        <div class="tmp">
+          <header>
+            <h1>Stencil App Starter</h1>
+          </header>
+
+          <main>
+            <stencil-router>
+              <stencil-route-switch scrollTopOffset={0}>
+                <stencil-route url='/' component='app-home' exact={true} />
+                <stencil-route url='/profile/:name' component='app-profile' />
+              </stencil-route-switch>
+            </stencil-router>
+          </main>
+        </div>
       </div>
     );
   }
