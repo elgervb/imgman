@@ -12,5 +12,12 @@ export const config: Config = {
       serviceWorker: null,
       baseUrl: 'https://myapp.local/'
     }
-  ]
+  ],
+  testing: {
+    testPathIgnorePatterns: [
+      'imgman_lib/.*canvas.*',
+      'imgman_lib/.*canvas.*',
+    ],
+    setupFilesAfterEnv: ['<rootDir>/setup-jest.ts']
+  }
 };
