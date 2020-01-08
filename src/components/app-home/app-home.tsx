@@ -1,4 +1,5 @@
 import { Component, h } from '@stencil/core';
+import { PickedFile } from '@elgervb/stencil-components/dist/types/components/file-picker/pickedfile';
 
 @Component({
   tag: 'app-home',
@@ -6,6 +7,10 @@ import { Component, h } from '@stencil/core';
   shadow: true
 })
 export class AppHome {
+
+  private filePicked(upload: PickedFile) {
+    console.log('Uploaded', upload.file.name)
+  }
 
   render() {
     return (
@@ -22,6 +27,9 @@ export class AppHome {
             Profile page
           </button>
         </stencil-route-link>
+        <evb-filepicker accept="image/*" onPick={(event) => this.filePicked(event.detail)}>
+          <evb-button>Pick image</evb-button>
+        </evb-filepicker>
       </div>
     );
   }
