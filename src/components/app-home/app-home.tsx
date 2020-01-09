@@ -5,6 +5,8 @@ import { clearCanvas } from '../../global/utils/imgman_lib/canvas/clear';
 import { brushFactory } from '../../global/utils/imgman_lib/drawing/brushes';
 import { BrushType } from '../../global/utils/imgman_lib/drawing/models';
 import { enableDrawing } from '../../global/utils/imgman_lib/drawing/draw';
+import { toDataUrl } from '../../global/utils/imgman_lib/data-url/to-data-url';
+import { MimeType } from '../../global/utils/imgman_lib/mimetype';
 
 @Component({
   tag: 'app-home',
@@ -14,6 +16,7 @@ import { enableDrawing } from '../../global/utils/imgman_lib/drawing/draw';
 export class AppHome implements ComponentInterface {
 
   private canvas: HTMLCanvasElement;
+  private downloadLink: HTMLAnchorElement;
   private drawingEnabled = true;
 
   private filePicked(upload: PickedFile) {
@@ -57,9 +60,13 @@ export class AppHome implements ComponentInterface {
 
         <div class="tmp">
 
-          <evb-filepicker accept="image/*" onPick={(event) => this.filePicked(event.detail)}>
-            <evb-button>Pick image</evb-button>
-          </evb-filepicker>
+          <evb-buttonbar>
+            <evb-filepicker accept="image/*" onPick={(event) => this.filePicked(event.detail)}>
+              <evb-button>Pick image</evb-button>
+            </evb-filepicker>
+          </evb-buttonbar>
+
+          <a href="/" download="imgman.png" onMouseOver={() => this.downloadLink.href = toDataUrl(this.canvas, MimeType.PNG)} ref={el => this.downloadLink = el}>download</a>
         </div>
 
         <canvas height={window.innerHeight} width={window.innerWidth} ref={el => this.canvas = el}></canvas>
