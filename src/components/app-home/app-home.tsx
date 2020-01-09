@@ -1,16 +1,20 @@
-import { Component, h } from '@stencil/core';
+import { Component, h, ComponentInterface } from '@stencil/core';
 import { PickedFile } from '@elgervb/stencil-components/dist/types/components/file-picker/pickedfile';
 import { createImage } from '../../global/utils/imgman_lib/create/image';
 import { clearCanvas } from '../../global/utils/imgman_lib/canvas/clear';
+import { brushFactory } from '../../global/utils/imgman_lib/drawing/brushes';
+import { BrushType } from '../../global/utils/imgman_lib/drawing/models';
+import { getMousePosition } from '../../global/utils/imgman_lib/drawing/utils';
 
 @Component({
   tag: 'app-home',
   styleUrl: 'app-home.css',
   shadow: true
 })
-export class AppHome {
+export class AppHome implements ComponentInterface {
 
   private canvas: HTMLCanvasElement;
+  private drawingEnabled = true;
 
   private filePicked(upload: PickedFile) {
 
@@ -30,6 +34,41 @@ export class AppHome {
         // put the image on the canvas
         context.drawImage(img, 0, 0, width, height, dx, dy, width, height);
       };
+  }
+
+  componentDidRender() {
+    this.enableDrawing();
+  }
+
+  private enableDrawing() {
+    let isDrawing = false;
+    const brush = brushFactory(BrushType.pen, {
+      canvas: this.canvas,
+      color: '#000',
+      lineWidth: 4,
+      globalAlpha: 1
+    });
+
+    this.canvas.onmousedown = (evt: MouseEvent) => {
+      if (this.drawingEnabled) {
+        isDrawing = true;
+
+        brush.down(getMousePosition(evt, this.canvas));
+      }
+    };
+
+    this.canvas.onmousemove = (evt: MouseEvent) => {
+      if (this.drawingEnabled && isDrawing) {
+        brush.move(getMousePosition(evt, this.canvas));
+      }
+    };
+
+    this.canvas.onmouseup = (evt: MouseEvent) => {
+      if (this.drawingEnabled) {
+        isDrawing = false;
+        brush.up(getMousePosition(evt, this.canvas));
+      }
+    };
   }
 
   render() {
