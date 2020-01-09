@@ -12,8 +12,6 @@ export class AppRoot {
   render() {
     return (
       <div>
-        <canvas height={window.innerHeight} width={window.innerWidth}></canvas>
-
         <div class="tmp">
           <header>
             <h1>Stencil App Starter</h1>
