@@ -7,14 +7,12 @@ import { Component, h } from '@stencil/core';
 })
 export class AppRoot {
 
-  compon
-
   render() {
     return (
       <div>
         <div class="tmp">
           <header>
-            <h1>Stencil App Starter</h1>
+            <h1>Imgman</h1>
           </header>
 
           <main>
