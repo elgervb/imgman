@@ -12,7 +12,15 @@ export class AppRoot {
       <div>
         <div class="tmp">
           <header>
-            <h1>Imgman</h1>
+            <stencil-route-link url='/'>
+              <h1>Imgman</h1>
+            </stencil-route-link>
+
+            <stencil-route-link url='/profile/stencil'>
+              <evb-button>
+                Profile page
+              </evb-button>
+            </stencil-route-link>
           </header>
 
           <main>

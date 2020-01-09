@@ -4,7 +4,7 @@ import { createImage } from '../../global/utils/imgman_lib/create/image';
 import { clearCanvas } from '../../global/utils/imgman_lib/canvas/clear';
 import { brushFactory } from '../../global/utils/imgman_lib/drawing/brushes';
 import { BrushType } from '../../global/utils/imgman_lib/drawing/models';
-import { getMousePosition } from '../../global/utils/imgman_lib/drawing/utils';
+import { enableDrawing } from '../../global/utils/imgman_lib/drawing/draw';
 
 @Component({
   tag: 'app-home',
@@ -41,7 +41,6 @@ export class AppHome implements ComponentInterface {
   }
 
   private enableDrawing() {
-    let isDrawing = false;
     const brush = brushFactory(BrushType.pen, {
       canvas: this.canvas,
       color: '#000',
@@ -49,26 +48,7 @@ export class AppHome implements ComponentInterface {
       globalAlpha: 1
     });
 
-    this.canvas.onmousedown = (evt: MouseEvent) => {
-      if (this.drawingEnabled) {
-        isDrawing = true;
-
-        brush.down(getMousePosition(evt, this.canvas));
-      }
-    };
-
-    this.canvas.onmousemove = (evt: MouseEvent) => {
-      if (this.drawingEnabled && isDrawing) {
-        brush.move(getMousePosition(evt, this.canvas));
-      }
-    };
-
-    this.canvas.onmouseup = (evt: MouseEvent) => {
-      if (this.drawingEnabled) {
-        isDrawing = false;
-        brush.up(getMousePosition(evt, this.canvas));
-      }
-    };
+    enableDrawing(this.canvas, brush, () => this.drawingEnabled);
   }
 
   render() {
@@ -76,11 +56,7 @@ export class AppHome implements ComponentInterface {
       <div class='app-home'>
 
         <div class="tmp">
-          <stencil-route-link url='/profile/stencil'>
-            <button>
-              Profile page
-            </button>
-          </stencil-route-link>
+
           <evb-filepicker accept="image/*" onPick={(event) => this.filePicked(event.detail)}>
             <evb-button>Pick image</evb-button>
           </evb-filepicker>
