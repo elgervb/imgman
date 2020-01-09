@@ -13,7 +13,6 @@ export class AppHome {
   private canvas: HTMLCanvasElement;
 
   private filePicked(upload: PickedFile) {
-    console.log('Uploaded', upload.file.name, this.canvas);
 
     createImage(upload.dataUrl)
       .onload = event => {
