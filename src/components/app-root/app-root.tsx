@@ -7,14 +7,20 @@ import { Component, h } from '@stencil/core';
 })
 export class AppRoot {
 
-  compon
-
   render() {
     return (
       <div>
         <div class="tmp">
           <header>
-            <h1>Stencil App Starter</h1>
+            <stencil-route-link url='/'>
+              <h1>Imgman</h1>
+            </stencil-route-link>
+
+            <stencil-route-link url='/profile/stencil'>
+              <evb-button>
+                Profile page
+              </evb-button>
+            </stencil-route-link>
           </header>
 
           <main>

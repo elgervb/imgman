@@ -1,4 +1,4 @@
-# Stencil App Starter
+# Imgman
 
 Stencil is a compiler for building fast web apps using Web Components.
 

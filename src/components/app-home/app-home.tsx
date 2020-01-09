@@ -1,16 +1,20 @@
-import { Component, h } from '@stencil/core';
+import { Component, h, ComponentInterface } from '@stencil/core';
 import { PickedFile } from '@elgervb/stencil-components/dist/types/components/file-picker/pickedfile';
 import { createImage } from '../../global/utils/imgman_lib/create/image';
 import { clearCanvas } from '../../global/utils/imgman_lib/canvas/clear';
+import { brushFactory } from '../../global/utils/imgman_lib/drawing/brushes';
+import { BrushType } from '../../global/utils/imgman_lib/drawing/models';
+import { enableDrawing } from '../../global/utils/imgman_lib/drawing/draw';
 
 @Component({
   tag: 'app-home',
   styleUrl: 'app-home.css',
   shadow: true
 })
-export class AppHome {
+export class AppHome implements ComponentInterface {
 
   private canvas: HTMLCanvasElement;
+  private drawingEnabled = true;
 
   private filePicked(upload: PickedFile) {
 
@@ -32,16 +36,27 @@ export class AppHome {
       };
   }
 
+  componentDidRender() {
+    this.enableDrawing();
+  }
+
+  private enableDrawing() {
+    const brush = brushFactory(BrushType.pen, {
+      canvas: this.canvas,
+      color: '#000',
+      lineWidth: 4,
+      globalAlpha: 1
+    });
+
+    enableDrawing(this.canvas, brush, () => this.drawingEnabled);
+  }
+
   render() {
     return (
       <div class='app-home'>
 
         <div class="tmp">
-          <stencil-route-link url='/profile/stencil'>
-            <button>
-              Profile page
-            </button>
-          </stencil-route-link>
+
           <evb-filepicker accept="image/*" onPick={(event) => this.filePicked(event.detail)}>
             <evb-button>Pick image</evb-button>
           </evb-filepicker>
