@@ -1,9 +1,10 @@
 import { hex2rgb } from '../../color/hex-2-rgb';
 import { rgbToString } from '../../color/rgb-to-string';
-import { BrushContext, Point } from '../models';
+import { BrushContext } from '../models';
 import { averageColor, getColor } from '../utils';
 
 import { Brush } from './brush';
+import { Point } from '../../utils/point';
 
 export class CircularLines implements Brush {
 

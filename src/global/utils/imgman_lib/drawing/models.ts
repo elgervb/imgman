@@ -7,11 +7,6 @@ export interface BrushContext {
   data?: any;
 }
 
-export interface Point {
-  x: number;
-  y: number;
-}
-
 export enum BrushType {
   pen = 'pen',
   marker = 'marker',

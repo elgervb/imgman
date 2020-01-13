@@ -1,4 +1,5 @@
-import { BrushContext, Point } from '../models';
+import { BrushContext } from '../models';
+import { Point } from '../../utils/point';
 
 export interface Brush {
 

@@ -10,6 +10,9 @@ import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
 import {
   MatchResults,
 } from '@stencil/router';
+import {
+  Rgb,
+} from './global/utils/imgman_lib/color/rgb';
 
 export namespace Components {
   interface AppHome {}
@@ -17,6 +20,10 @@ export namespace Components {
     'match': MatchResults;
   }
   interface AppRoot {}
+  interface EvbColorwheel {
+    'active': boolean;
+    'color': Rgb;
+  }
 }
 
 declare global {
@@ -39,10 +46,17 @@ declare global {
     prototype: HTMLAppRootElement;
     new (): HTMLAppRootElement;
   };
+
+  interface HTMLEvbColorwheelElement extends Components.EvbColorwheel, HTMLStencilElement {}
+  var HTMLEvbColorwheelElement: {
+    prototype: HTMLEvbColorwheelElement;
+    new (): HTMLEvbColorwheelElement;
+  };
   interface HTMLElementTagNameMap {
     'app-home': HTMLAppHomeElement;
     'app-profile': HTMLAppProfileElement;
     'app-root': HTMLAppRootElement;
+    'evb-colorwheel': HTMLEvbColorwheelElement;
   }
 }
 
@@ -52,11 +66,18 @@ declare namespace LocalJSX {
     'match'?: MatchResults;
   }
   interface AppRoot {}
+  interface EvbColorwheel {
+    'active'?: boolean;
+    'color'?: Rgb;
+    'onEvbColor'?: (event: CustomEvent<Rgb>) => void;
+    'onEvbPreview'?: (event: CustomEvent<Rgb>) => void;
+  }
 
   interface IntrinsicElements {
     'app-home': AppHome;
     'app-profile': AppProfile;
     'app-root': AppRoot;
+    'evb-colorwheel': EvbColorwheel;
   }
 }
 
@@ -69,6 +90,7 @@ declare module "@stencil/core" {
       'app-home': LocalJSX.AppHome & JSXBase.HTMLAttributes<HTMLAppHomeElement>;
       'app-profile': LocalJSX.AppProfile & JSXBase.HTMLAttributes<HTMLAppProfileElement>;
       'app-root': LocalJSX.AppRoot & JSXBase.HTMLAttributes<HTMLAppRootElement>;
+      'evb-colorwheel': LocalJSX.EvbColorwheel & JSXBase.HTMLAttributes<HTMLEvbColorwheelElement>;
     }
   }
 }

@@ -1,6 +1,6 @@
 import { Rgb } from '../color/rgb';
+import { Point } from '../utils/point';
 
-import { Point } from './models';
 
 export function distanceBetween(point1: Point, point2: Point) {
   return Math.sqrt(Math.pow(point2.x - point1.x, 2) + Math.pow(point2.y - point1.y, 2));
@@ -29,10 +29,4 @@ export function averageColor(rgb1: Rgb, rgb2: Rgb): Rgb {
     b: Math.round(half * rgb1.b + half * rgb2.b),
     a: Math.round(half * rgb1.a + half * rgb2.a)
   };
-}
-
-export function getMousePosition(evt: MouseEvent, el: Element): Point {
-  const box = el.getBoundingClientRect();
-
-  return { x: evt.clientX - box.left, y: evt.clientY - box.top };
 }

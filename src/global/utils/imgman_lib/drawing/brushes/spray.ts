@@ -1,7 +1,8 @@
 import { randomFloat } from '../../random/random-float';
-import { BrushContext, Point } from '../models';
+import { BrushContext } from '../models';
 
 import { Brush } from './brush';
+import { Point } from '../../utils/point';
 
 const DEFAULT_DENSITY = 50;
 const RENDER_TIMEOUT = 50;

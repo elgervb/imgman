@@ -1,0 +1,19 @@
+:host {
+  display: flex;
+  position: relative;
+}
+.picker {
+  cursor: pointer;
+  height: 1.5rem;
+  fill: rgba(0, 0, 0, .5);
+  width: 1.5rem;
+}
+.picker.active {
+  fill: rgba(0, 0, 0, 1);
+}
+
+.wheel {
+  position: absolute;
+  left: 2rem;
+  top: -6rem;
+}

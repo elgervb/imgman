@@ -20,6 +20,11 @@
       "node_modules/@elgervb"
     ]
   },
+  "paths": {
+    "@lib/*": [
+      "./src/global/utils/imgman_lib/*"
+    ]
+  },
   "include": [
     "src"
   ],

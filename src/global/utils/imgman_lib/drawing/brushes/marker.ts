@@ -1,7 +1,8 @@
-import { BrushContext, Point } from '../models';
+import { BrushContext } from '../models';
 import { angleBetween, distanceBetween } from '../utils';
 
 import { Brush } from './brush';
+import { Point } from '../../utils/point';
 
 export class Marker implements Brush {
 

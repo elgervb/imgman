@@ -1,5 +1,5 @@
 import { Brush } from './brushes/brush';
-import { getMousePosition } from './utils';
+import { getMousePosition } from '../utils/get-mouse-position';
 
 export function enableDrawing(canvas: HTMLCanvasElement, brush: Brush, isDrawingEnabled: () => boolean) {
   let isDrawing = false;
