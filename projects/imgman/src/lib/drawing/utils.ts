@@ -27,7 +27,7 @@ export function averageColor(rgb1: Rgb, rgb2: Rgb): Rgb {
     r: Math.round(half * rgb1.r + half * rgb2.r),
     g: Math.round(half * rgb1.g + half * rgb2.g),
     b: Math.round(half * rgb1.b + half * rgb2.b),
-    a: Math.round(half * rgb1.a + half * rgb2.a)
+    a: Math.round(half * (rgb1.a || 1) + half * (rgb2.a || 1))
   };
 }
 

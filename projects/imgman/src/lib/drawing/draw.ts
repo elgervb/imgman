@@ -26,7 +26,7 @@ export function enableDrawing(canvas: HTMLCanvasElement, brush: Brush, isDrawing
 }
 
 export function disableDrawing(canvas: HTMLCanvasElement) {
-  canvas.onmousedown = undefined;
-  canvas.onmousemove = undefined;
-  canvas.onmouseup = undefined;
+  canvas.onmousedown = null;
+  canvas.onmousemove = null;
+  canvas.onmouseup = null;
 }
